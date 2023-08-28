@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChatGPT 스타일 챗봇</title>
+    <link rel="stylesheet" href="../final/style.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <!-- 메뉴 Start -->
+        <div class="chat-header">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 absolute left-[340px] top-[65px]" preserveAspectRatio="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M1.875 15.625H18.125V13.9987H1.875V15.625ZM1.875 10.8125H18.125V9.1875H1.875V10.8125ZM1.875 6H18.125V4.375H1.875V6Z"
+                    fill="black"></path>
+            </svg>
+            <p class="leftTxt">채팅</p>
+        </div>
+        <!-- 메뉴 Start -->
+
+        <div class="chat-body">
+            <!-- 인트로 Start -->
+            <div id="chatIntro">
+                <div class="chat-intro-hi">;Hㅣ</div>
+                <div class="chat-intro-qa">GPT역사투어에 물어보세요.</div>
+            </div>
+            <!-- 인트로 End -->
+
+            <!-- 대화창 Start -->
+            <div class="chat-message" id="chatMessage" style="display:block;">
+                <div id="image-container"></div> <!-- 이미지를 표시할 컨테이너 엘리먼트 -->
+            </div>
+            <!-- 대화창 End -->
+        </div>
+
+        <!-- 입력창 Start -->
+        <div class="chat-input">
+            <div class="chat-input-search">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-[18px] h-[18px] absolute left-[571px] top-[874px]" preserveAspectRatio="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.56064 11.646C5.30839 11.646 3.47689 9.8145 3.47689 7.56113C3.47689 5.30888 5.30839 3.47738 7.56064 3.47738C9.81401 3.47738 11.6455 5.30888 11.6455 7.56113C11.6455 9.8145 9.81401 11.646 7.56064 11.646V11.646ZM16.312 15.03L12.2924 11.0115C13.0023 10.0395 13.4354 8.85487 13.4354 7.56112C13.4354 4.32225 10.8006 1.6875 7.56064 1.6875C4.32176 1.6875 1.68701 4.32225 1.68701 7.56112C1.68701 10.8 4.32176 13.4359 7.56064 13.4359C8.86226 13.4359 10.0548 12.996 11.029 12.2782L15.0475 16.2956L16.312 15.03Z"
+                        fill="#252730"></path>
+                </svg>
+            </div>
+            <textarea id="userInput">경주에 대해 알려줘</textarea>
+            <div class="chat-input-attach">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 absolute left-[570px] top-[919px]" preserveAspectRatio="xMidYMid meet">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.0002 7.33301C10.0002 8.43967 9.10685 9.33301 8.00018 9.33301C6.89352 9.33301 6.00018 8.43967 6.00018 7.33301V3.33301C6.00018 2.22634 6.89352 1.33301 8.00018 1.33301C9.10685 1.33301 10.0002 2.22634 10.0002 3.33301V7.33301ZM8.00016 10.6663C9.84016 10.6663 11.3335 9.17301 11.3335 7.33301H12.6668C12.6668 9.68634 10.9268 11.6197 8.66683 11.9463V13.9997H7.3335V11.9463C5.0735 11.6197 3.3335 9.68634 3.3335 7.33301H4.66683C4.66683 9.17301 6.16016 10.6663 8.00016 10.6663Z"
+                        fill="#A9ABB8"></path>
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 absolute left-[601px] top-[919px]" preserveAspectRatio="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1.5 2.57016L1 2.07016L1.92 1.16016L14.39 13.6302L13.48 14.5502L12.43 13.5002H1.5V2.57016ZM4.59894 6.49147C4.80956 6.46457 5.00789 6.37729 5.17 6.24016L3.61 4.69016C3.45157 4.88169 3.36336 5.12161 3.36 5.37016C3.35418 5.58241 3.40991 5.79181 3.52046 5.97308C3.63102 6.15436 3.79168 6.29976 3.98305 6.39175C4.17442 6.48373 4.38832 6.51836 4.59894 6.49147ZM3.36 10.5202V11.7502L10.66 11.7702L7.47 8.58016L6.47 9.52016L5.47 8.52016L3.36 10.5202ZM9.33995 6.77015L5.06995 2.50015H14.4999V11.9302L12.6399 10.0702V8.88015L9.89995 6.22015L9.33995 6.77015Z"
+                        fill="#A9ABB8"></path>
+                </svg>
+            </div>
+            <button onclick="sendMessage()">보내기</button>
+        </div>
+        <!-- 입력창 End -->
+
+    </div>
+
+    <!-- 퀴즈 영역 Start -->
+    <div id="quiz-container" style="display:none;">
+        <div class="quiz-title">한국 문화 퀴즈</div>
+        <div class="quiz-question" id="quiz1">경주가 한국의 수도인가요?</div>
+        <div class="quiz-question" id="quiz2" style="display:none;">경주의 첨성대는 고대 신라 시대에 지어진 것이다?</div>
+        <div class="quiz-question" id="quiz3" style="display:none;">경주에 대릉원이라는 고대 왕의 무덤이 있다?</div>
+        <div class="quiz-answer-btn">
+            <button class="quiz-answer-yes" onclick="goAnswer('Y')">O</button>
+            <button class="quiz-answer-no" onclick="goAnswer('N')">X</button>
+        </div>
+    </div>
+    <!-- 퀴즈 영역 End -->
+
+    <!-- 관광 투어 추천 레이어팝업 Start -->
+    <div class="popup-container" id="popupContainer" style="display:none;">
+        <div class="popup">
+            <h2>레이어 팝업</h2>
+            <p>팝업 내용을 여기에 추가하세요.</p>
+            <button id="closePopupButton">닫기</button>
+        </div>
+    </div>
+    <!-- 관광 투어 추천 레이어팝업 End -->
+
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
