@@ -1,0 +1,347 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chat-body {
+    height: 640px;
+    overflow-y: auto;
+}
+
+.leftTxt {
+    display: inline-block;
+    color: black;
+    position: relative;
+    top: -4px;
+}
+
+/* 인트로 Start */
+#chatIntro {
+    top: 350px;
+    position: relative;
+    width: 100%;
+}
+
+.chat-intro-hi {
+    color: rgba(37, 39, 48, 1);
+    font-family: Pretendard;
+    font-weight: Regular;
+    font-size: 28px;
+    opacity: 1;
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.chat-intro-qa {
+    width: 500px;
+    height: 44px;
+    padding-top: 7px;
+    /* background: rgba(54,96,255,1); */
+    background: rgba(35, 112, 123);
+    opacity: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 1);
+    font-family: Pretendard;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+    margin-left: 260px;
+}
+/* 인트로 End */
+
+/* 입력창 Start */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 30px 80px;
+    width: 817px;
+    height: 93px;
+    background: rgba(247, 247, 250, 1);
+    opacity: 1;
+    border: 1px solid rgba(225, 225, 232, 1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.chat-input button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    background: rgba(35, 112, 123);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.chat-input-search {
+    position: absolute;
+    margin-top: -50px;
+}
+
+.chat-input-attach {
+    position: absolute;
+    top: 850px;
+}
+
+#userInput {
+    width: 690px;
+    height: 60px;
+    margin: 0px 15px 0px 25px;
+    color: rgba(0, 0, 0, 1);
+    outline-color: rgba(247, 247, 250, 1);
+    font-family: Pretendard;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+    border-style: none;
+    background-color: rgba(247, 247, 250, 1);
+    cursor: pointer;
+}
+/* 입력창 End */
+
+/* 대화창 Start */
+.chat-message {
+    white-space: pre-wrap;
+    color: rgba(255, 255, 255, 1);
+    font-family: Pretendard;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    overflow-y: auto;
+    padding: 0px 60px;
+}
+
+.chat-msg-user {
+    max-width: 640px;
+    background: rgba(35, 112, 123);
+    opacity: 1;
+    top: 244px;
+    left: 960px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: right;
+    clear: right;
+    margin: 10px;
+    padding: 10px;
+}
+
+.chat-msg-bot {
+    max-width: 640px;
+    height: 46px;
+    color: rgba(37, 39, 48);
+    background: rgba(245, 245, 245);
+    opacity: 1;
+    top: 244px;
+    left: 960px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: left;
+    clear: right;
+    margin: 10px;
+    padding: 10px;
+}
+
+.chat-button {
+    position: relative; /* 고정 위치로 설정 */
+    float: right;
+    clear: right;
+}
+
+
+
+.chat-button-sel {
+    width: 150px;
+    height: 46px;
+    display: inline-grid;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border-color:rgba(35, 112, 123);
+    border-width: medium;
+    border-style: solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 3px 5px;
+}
+
+.chat-button-sel:hover {
+    background-color:rgba(35, 112, 123);
+    color: #fff;
+    cursor: pointer;
+}
+
+.chat-msg-user-btn {
+    max-width: 640px;
+    color: #000;
+    background-color: #fff;
+    border-color:rgba(35, 112, 123);
+    border-width: thin;
+    border-style: solid;
+    opacity: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: right;
+    clear: right;
+    margin: 3px;
+    padding: 10px;
+}
+
+.chat-msg-user-btn:hover {
+    color: #fff;
+    background-color:rgba(35, 112, 123);
+    cursor: pointer;
+}
+/* 대화창 End */
+
+/* 도슨트 영상 Start */
+.video-container {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+}
+/* 도슨트 영상 End */
+
+/* 퀴즈 Start */
+#quiz-container {
+    width: 500px;
+    max-width: 640px;
+    position: relative;
+    background-color: rgba(245, 245, 245);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: left;
+    clear: right;
+    margin: 10px;
+    padding: 20px;
+}
+.quiz-title {
+    position: relative;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+.quiz-question {
+    position: relative;
+    float: left;
+    clear: left;
+    color: #000;
+    margin: 20px 0px;
+}
+.quiz-answer-btn {
+    position: relative;
+    float: left;
+    clear: left;
+}
+.quiz-answer-yes {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    float: left;
+    font-size: 30px;
+    vertical-align: middle;
+    color: #fff;
+    background-color:rgba(35, 112, 123);
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 3px;
+}
+.quiz-answer-yes:hover {
+    border-color:rgba(21, 64, 71);
+    border-width: thick;
+    border-style: solid;
+    cursor: pointer;
+}
+.quiz-answer-no {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    float: left;
+    font-size: 25px;
+    vertical-align: middle;
+    background-color: #fff;
+    border-color:rgba(35, 112, 123);
+    border-width: thin;
+    border-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 3px;
+}
+.quiz-answer-no:hover {
+    border-color:rgba(35, 112, 123);
+    border-width: thick;
+    border-style: solid;
+    cursor: pointer;
+}
+/* 퀴즈 End */
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
